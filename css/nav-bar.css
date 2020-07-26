@@ -16,3 +16,39 @@ nav {
   .nav i {
     font-size: 20px;
   }
+
+  .nav .nav__list-link {
+      position: relative;
+      /* relative가 없으면 전체 nav바를 기준으로 삼아 nav바 우측 상단에 뱃지가 위치함 */
+  }
+
+  .nav .nav__badge {
+      position: absolute;
+      top: -7px;
+      right: -7px;
+      font-size: 10px;
+      color: white;
+      background-color: #dc5d46;
+      width: 18px;
+      height: 18px;
+      /* 아래3개 가운데 정렬 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+  }
+
+  @keyframes showNavBar {
+    from{
+      transform: translateY(80px);
+    }
+    to{
+      transform: none;
+    }
+  }
+
+  .nav{
+    transform: translateY(80px);
+    animation: showNavBar 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+  }
